@@ -20,7 +20,7 @@ export function SiteHeader() {
 {/* <useClient> */}
 
             {/* </useClient> */}
-            <Link
+            {/* <Link
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
@@ -34,6 +34,22 @@ export function SiteHeader() {
                 <Icons.gitHub className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </div>
+            </Link> */}
+            <Link
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+            <Avatar className="rounded shadow-orange-400 hover:cursor-pointer h-7">
+              <AvatarImage src="https://github.com/regnna.png"
+              alt="User"
+              className="hover:scale-120 duration-150"
+
+              // target="_blank"
+              // rel="noreferrer"
+              />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
             </Link>
             <Link
               href={siteConfig.links.twitter}
@@ -50,22 +66,7 @@ export function SiteHeader() {
                 <span className="sr-only">Twitter</span>
               </div>
             </Link>
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-            <Avatar className="rounded shadow-orange-400 hover:cursor-pointer h-7">
-              <AvatarImage src="https://github.com/regnna.png"
-              alt="User"
-              className="bg-green-300"
 
-              // target="_blank"
-              // rel="noreferrer"
-              />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            </Link>
             <ThemeToggle />
           </nav>
         </div>

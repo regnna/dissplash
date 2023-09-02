@@ -34,6 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
+
         <head />
         <body
           className={cn(
@@ -44,9 +45,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-
-                <div className="flex"><SideMenu/>
-                <div  className="w-full px-4 pt-4" >{children}</div></div>
+<div className="flex ">
+                <div className="flex w-1/6"><SideMenu/>
+                </div>
+                <div  className="w-5/6 px-4 pt-4 ml-15%" >{children}</div></div>
                 </div>
 
             <TailwindIndicator />

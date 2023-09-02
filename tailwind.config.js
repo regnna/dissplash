@@ -55,6 +55,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        
+      signature: ["Great Vibes"],
       },
       keyframes: {
         "accordion-down": {

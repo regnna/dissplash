@@ -6,36 +6,33 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 
+import { Inter } from 'next/font/google'
+import { Great_Vibes } from 'next/font/google';
+
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+const greatVibes = Great_Vibes({
+  weight:'400',
+  subsets: ['latin'],
+  variable: '--font-great-vibes',
+})
+
 interface MainNavProps {
   items?: NavItem[]
 }
 
 export function MainNav() {
   return (
-    <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="flex items-center space-x-2">
+    // <div className="flex gap-6 md:gap-10">
+      <Link href="/" className="flex items-center ">
         {/* <Icons.logo className="h-6 w-6" /> */}
-        <span className="inline-block font-bold">{siteConfig.name}</span>
+        <h1 className='font-mono text-4xl'>{siteConfig.name}</h1>
       </Link>
-      {/* {items?.length ? (
-        <nav className="flex gap-6">
-          {items?.map(
-            (item, index) =>
-              item.href && (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              )
-          )}
-        </nav>
-      ) : null} */}
-    </div>
+
+    // </div>
   )
 }

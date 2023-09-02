@@ -21,7 +21,10 @@ const router=useRouter();
        <CldUploadButton
       onUpload={(reslt: UploadResult)=>{
         setImageId(reslt.info.public_id);
+        setTimeout(() => {
         router.refresh();
+
+        }, 2000);
       }}
       uploadPreset="oi8qde66" >
 <div className='flex flex-row'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 mr-3 ">

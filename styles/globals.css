@@ -22,10 +22,10 @@
     --primary: 291.11 35.1% 15.1%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 58 72% 68%;
     --secondary-foreground: 291.11 35.1% 15.1%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 64 100% 32%;
     --accent-foreground: 291.11 35.1% 15.1%;
 
     --destructive: 0 100% 50%;
@@ -43,7 +43,7 @@
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%;
 
-    --accent: 216 34% 17%;
+    --accent: 259 30% 34%;
     --accent-foreground: 210 40% 98%;
 
     --popover: 291.11 35.1% 15.1%;
@@ -76,6 +76,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1,
   }
 }
