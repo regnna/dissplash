@@ -1,17 +1,23 @@
 "use client"
-import { CldImage } from 'next-cloudinary'
+import { CldImage, CldImageProps } from 'next-cloudinary'
 import { Icons } from "@/components/icons"
 import { Heart } from '@/components/iconz/heart'
-import React, { useTransition } from 'react'
+import React, { useState, useTransition } from 'react'
 import { setAsFavoriteAction } from './actions'
 import { SearchResult } from './page'
 import { FullHeart } from '@/components/iconz/fullheart'
-const CloudinaryImage=(props:any & {imageData: SearchResult ; path:string})=>{
+const CloudinaryImage=(props:{imageData: SearchResult ; onUnheart?:(
+  ubheartedResource:SearchResult
+)=>void; } &Omit<CldImageProps,"src">)=>{
   const [transition,startTransition]=useTransition()
 
-  const {imageData}=props;
+  const {imageData,onUnheart}=props;
 
-  const isFavorite=imageData.tags.includes('favorite')
+  // const isFavorite=imageData.tags.includes('favorite')
+
+  const [isFavorited,setIsFavorited]=useState(
+    imageData.tags.includes('favorite')
+  )
 
   return(
     <div className='relative'>
@@ -19,10 +25,13 @@ const CloudinaryImage=(props:any & {imageData: SearchResult ; path:string})=>{
   <CldImage {...props}
   src={imageData.public_id}/>
   {/* <Icons.heart className=" absolute top-2 right-2" /> */}
-  {isFavorite?
+  {isFavorited?
   (<FullHeart onClick={()=>{
+    onUnheart?.(imageData)
+    setIsFavorited(false)
+
   startTransition(()=>{
-  setAsFavoriteAction(imageData.public_id,true,props.path)
+  setAsFavoriteAction(imageData.public_id,false)
 
   });
 }}
@@ -31,8 +40,9 @@ const CloudinaryImage=(props:any & {imageData: SearchResult ; path:string})=>{
 
 :(
   <Heart onClick={()=>{
+    setIsFavorited(true)
   startTransition(()=>{
-  setAsFavoriteAction(imageData.public_id,false,props.path)
+  setAsFavoriteAction(imageData.public_id,true)
 
   });
 }}
