@@ -6,6 +6,7 @@ import React, { useState, useTransition } from 'react'
 import { setAsFavoriteAction } from './actions'
 import { SearchResult } from './page'
 import { FullHeart } from '@/components/iconz/fullheart'
+import { ImageMenu } from '@/components/iamge-menu'
 const CloudinaryImage=(props:{imageData: SearchResult ; onUnheart?:(
   ubheartedResource:SearchResult
 )=>void; } &Omit<CldImageProps,"src">)=>{
@@ -35,7 +36,7 @@ const CloudinaryImage=(props:{imageData: SearchResult ; onUnheart?:(
 
   });
 }}
- className=" absolute top-2 right-2 text-red-500
+ className=" absolute top-2 left-2 text-red-500
  hover:text-white hover:cursor-pointer"/>)
 
 :(
@@ -46,9 +47,9 @@ const CloudinaryImage=(props:{imageData: SearchResult ; onUnheart?:(
 
   });
 }}
- className="text-white absolute top-2 right-2 hover:text-red-500 hover:cursor-pointer"/>
+ className="text-white absolute top-2 left-2 hover:text-red-500 hover:cursor-pointer"/>
 )}
-
+<ImageMenu image={imageData}/>
   </div>
   )
 }
