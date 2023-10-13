@@ -10,7 +10,7 @@ const SideMenu = () => {
             Manage
           </h1>
           <div className="space-y-1">
-            <Button variant="ghost" className="w-full justify-start font-bold" asChild>
+            <Button variant="ghost" className="w-full justify-start font-extrabold" asChild>
               <Link href="/gallery">
 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mr-2 h-4 w-4">
@@ -19,7 +19,7 @@ const SideMenu = () => {
               Gallery
               </Link>
             </Button>
-            <Button asChild variant="ghost" className="w-full justify-start font-bold">
+            <Button asChild     variant="ghost" className="w-full justify-start font-extrabold">
               <Link href="/albums">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mr-2 w-4 h-4">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
@@ -28,7 +28,7 @@ const SideMenu = () => {
 </Link>
 
             </Button>
-            <Button variant="ghost" className="w-full justify-start font-bold" asChild>
+            <Button variant="ghost" className="w-full justify-start font-extrabold" asChild>
               <Link href='favorites'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mr-2 h-4 w-4">
   <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />

@@ -25,7 +25,7 @@ export function AlbumCard({folder}:{folder:Folder}) {
 
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="ghost">
+        <Button variant="secondary">
           <Link href={`/albums/${folder.name}`}>View Album</Link>
           {/* dududu */}
         </Button>
