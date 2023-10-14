@@ -1,7 +1,13 @@
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
+import cloudinary from "cloudinary"
+
 import Link from "next/link"
-const SideMenu = () => {
+import { Folder } from "@/app/albums/page"
+const SideMenu = async () => {
+  const {folders}=(await cloudinary.v2.api.root_folders()) as {
+    folders:Folder[]
+  }
   return (
      <div className={cn("pb-12 w-1/6 h-screen bg-accent fixed")}>
       <div className="space-y-4 py-4">
@@ -28,6 +34,14 @@ const SideMenu = () => {
 </Link>
 
             </Button>
+
+            {folders.map((folder)=>(
+            <Button key={folder.name} asChild
+            className="w-full justify-start flex gap-2" variant="ghost">
+              <Link href={`/albums/${folder.path}`} className="pl-8">{folder.name}</Link>
+            </Button>
+            ))}
+
             <Button variant="ghost" className="w-full justify-start font-extrabold" asChild>
               <Link href='favorites'>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mr-2 h-4 w-4">

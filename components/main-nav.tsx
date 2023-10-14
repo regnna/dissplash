@@ -8,6 +8,7 @@ import { Icons } from "@/components/icons"
 
 import { Inter } from 'next/font/google'
 import { Great_Vibes } from 'next/font/google';
+import Image from "next/image"
 
 
 const inter = Inter({
@@ -28,8 +29,9 @@ interface MainNavProps {
 export function MainNav() {
   return (
     // <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="flex items-center ">
+      <Link href="/" className=" ml-4 flex items-center gap-4">
         {/* <Icons.logo className="h-6 w-6" /> */}
+        <Image src='/album.png' width='50' height='50' alt="Website logo"/>
         <h1 className='font-mono text-4xl'>{siteConfig.name}</h1>
       </Link>
 

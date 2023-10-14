@@ -50,8 +50,8 @@ image={image} onClose={()=>setOpen(false)}
             />
           </DropdownMenuItem>
           <DropdownMenuItem className="grid grid-flow-col" asChild onClick={()=>setOpen(false)}>
-<Button variant="ghost" asChild >
-            <Link  href={`/edit?publicId=${encodeURIComponent(image.public_id)}`}>
+<Button asChild variant="ghost" className="hover:bg-slate-900" >
+            <Link className="cursor-pointer " href={`/edit?publicId=${encodeURIComponent(image.public_id)}`}>
   <Pencil className="h-4 w-4  mr-2"/>
 
               Edit</Link>
