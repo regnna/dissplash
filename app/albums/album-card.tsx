@@ -13,6 +13,7 @@ import {
 // import { Label } from "@/components/ui/label"
 import { Folder } from "./page"
 import Link from "next/link"
+// cloudinary.v2.api.delete_folder("project/uuid", console.log);
 
 export function AlbumCard({folder}:{folder:Folder}) {
   return (
@@ -29,7 +30,7 @@ export function AlbumCard({folder}:{folder:Folder}) {
           <Link href={`/albums/${folder.name}`}>View Album</Link>
           {/* dududu */}
         </Button>
-        {/* <Button>Deploy</Button> */}
+        <Button variant='destructive'>Delete</Button>
       </CardFooter>
     </Card>
   )
